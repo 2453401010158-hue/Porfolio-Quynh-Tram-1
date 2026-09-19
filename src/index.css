@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@keyframes floatUp {
+  0% {
+    transform: translate(-50%, 15px) scale(0.8);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -60px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -30;
+  }
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "CV Interactive - Nguyễn Ngọc Quỳnh Trâm",
+  "description": "Hồ sơ năng lực cá nhân & Phòng thí nghiệm KHTN tương tác - Nguyễn Ngọc Quỳnh Trâm, Sinh viên Sư phạm Khoa học Tự nhiên ĐHSP TP.HCM",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
