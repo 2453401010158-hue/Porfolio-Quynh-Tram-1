@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
               NGUYỄN NGỌC QUỲNH TRÂM
             </h1>
             <p className={`text-sm sm:text-base mt-1 ${isDarkTeal ? 'text-[#c2a265]' : 'text-pink-100'}`}>
-              Sinh Viên Ngành Sư Phạm Khoa Hóa Học
+              Sinh Viên Ngành Sư Phạm Khoa Học Tự Nhiên
             </p>
           </div>
 
