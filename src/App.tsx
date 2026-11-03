@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { ProfileCard } from './components/ProfileCard';
 import { CareerObjective } from './components/CareerObjective';
@@ -9,12 +9,9 @@ import { ThemeMode } from './types';
 import { soundFX } from './utils/audio';
 
 export default function App() {
-  const [theme, setTheme] = useState<ThemeMode>('rose-pastel');
+  // Theme is locked permanently to rose-pastel (Sư phạm Hồng)
+  const theme: ThemeMode = 'rose-pastel';
   const [audioMuted, setAudioMuted] = useState(false);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'rose-pastel' ? 'editorial-teal' : 'rose-pastel'));
-  };
 
   const toggleAudio = () => {
     const nextState = !audioMuted;
@@ -22,20 +19,13 @@ export default function App() {
     soundFX.enabled = !nextState;
   };
 
-  const isDarkTeal = theme === 'editorial-teal';
-
   return (
     <div
-      className={`min-h-screen flex flex-col font-sans transition-colors duration-500 ${
-        isDarkTeal
-          ? 'bg-[#0b1d22] text-[#f4efe6]'
-          : 'bg-[#fdf1f6] text-[#4a2c3a]'
-      }`}
+      className="min-h-screen flex flex-col font-sans transition-colors duration-500 bg-[#fdf1f6] text-[#4a2c3a]"
     >
       {/* Top Banner & Header */}
       <Header
         theme={theme}
-        onToggleTheme={toggleTheme}
         audioMuted={audioMuted}
         onToggleAudio={toggleAudio}
       />

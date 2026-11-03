@@ -1,19 +1,18 @@
 import React from 'react';
 import { UniversityLogo } from './UniversityLogo';
-import { Printer, Volume2, VolumeX, Sparkles, Palette } from 'lucide-react';
+import { Printer, Volume2, VolumeX, Sparkles } from 'lucide-react';
 import { ThemeMode } from '../types';
 import { soundFX } from '../utils/audio';
 
 interface HeaderProps {
-  theme: ThemeMode;
-  onToggleTheme: () => void;
+  theme?: ThemeMode;
+  onToggleTheme?: () => void;
   audioMuted: boolean;
   onToggleAudio: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  theme,
-  onToggleTheme,
+  theme = 'rose-pastel',
   audioMuted,
   onToggleAudio,
 }) => {
@@ -56,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'bg-white/20 text-white border border-white/30 backdrop-blur-sm'
               }`}>
                 <Sparkles className="w-3 h-3" />
-                HỒ SƠ NĂNG LỰC CÁ NHÂN & PHÒNG THÍ NGHIỆM
+                HỒ SƠ NĂNG LỰC CÁ NHÂN
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -91,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* Utility Buttons (Audio toggle, Theme toggle, Print) */}
+            {/* Utility Buttons (Audio toggle, Print) */}
             <div className="flex items-center gap-1.5 print:hidden">
               <button
                 type="button"
@@ -104,22 +103,6 @@ export const Header: React.FC<HeaderProps> = ({
                 }`}
               >
                 {audioMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-              </button>
-
-              <button
-                type="button"
-                onClick={onToggleTheme}
-                title="Chuyển đổi giao diện: Sư phạm Hồng phấn / Editorial Dark Teal"
-                className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-2 rounded-lg transition-colors border ${
-                  isDarkTeal
-                    ? 'bg-[#c2a265] text-[#0f282f] border-[#c2a265] hover:bg-[#d4b576]'
-                    : 'bg-white/20 border-white/30 text-white hover:bg-white/30'
-                }`}
-              >
-                <Palette className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">
-                  {isDarkTeal ? 'Giao diện Hồng' : 'Editorial Teal'}
-                </span>
               </button>
 
               <button
